@@ -45,3 +45,8 @@
   fill: #fcdd00;
   transition: 0.25s ease-in-out;
 }
+@media screen and (max-width: 767px) {
+  .container {
+    display: none;
+  }
+}

@@ -37,3 +37,8 @@
 .infoContainer ul li {
   color: #565656;
 }
+@media screen and (max-width: 767px) {
+  .container {
+    display: none;
+  }
+}

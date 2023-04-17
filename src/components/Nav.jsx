@@ -2,16 +2,27 @@ import React from "react";
 import Logo from "../assets/LogoColor.png";
 import N from "../styles/Nav.module.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 export default function Nav() {
+  const [nav, setNav] = useState(false);
+
+  const HandleNav = () => {
+    setNav(!nav);
+  };
   return (
     <div className={N.container}>
       <Link to="/">
         <div className={N.logoContainer}>
           <img src={Logo} alt="" />
         </div>
+        <div onClick={HandleNav} className={N.responsiveMenu}>
+          <span className={nav ? N.activeTop : N.top}></span>
+          <span className={nav ? N.activeMiddle : N.middle}></span>
+          <span className={nav ? N.activeBottom : N.bottom}></span>
+        </div>
       </Link>
-      <div className={N.menu}>
-        <ul>
+      <div className={!nav ? N.responsiveClosedMenu : N.menu}>
+        <ul className={!nav && N.hiddenList}>
           <li>Nosotros</li>
           <li>Productos</li>
           <li>Contacto</li>

@@ -9,7 +9,9 @@ export default function HomeHeader() {
           Soluciones efectivas para tus cultivos, con productos de buena calidad
         </p>
       </div>
-      <img src={Header} alt="" />
+      <div className={H.imgContainer}>
+        <img src={Header} alt="" />
+      </div>
       <div className={H.welcomeMsg}>
         <p>
           Bienvenidos a Agroalimentos e insumos del Mercosur. Somos líderes en

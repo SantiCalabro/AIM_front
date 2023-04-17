@@ -60,3 +60,45 @@
   border: solid rgb(150, 150, 150);
   transition: 0.15s ease-in-out;
 }
+@media screen and (max-width: 767px) {
+  .container {
+    width: 100%;
+    margin-bottom: 0;
+
+    position: absolute;
+    left: 0;
+  }
+  .btnContainer h2 {
+    font-size: 16px;
+  }
+
+  .allIcons {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+  }
+  .icon {
+    height: 100px;
+    width: 120px;
+  }
+  .icon img {
+    width: 70%;
+  }
+  .imgCont {
+    height: 100px;
+    width: 100px;
+    border-radius: 0;
+    border: none;
+  }
+  .icon span {
+    font-size: 14px;
+  }
+  .icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    cursor: pointer;
+  }
+}
