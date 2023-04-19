@@ -1,6 +1,5 @@
 .container {
   width: 100%;
-  margin-bottom: -2px;
 }
 .container img {
   width: 100%;
@@ -13,6 +12,7 @@
   position: absolute;
   margin-top: 60px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -26,10 +26,7 @@
 }
 .allIcons {
   width: 70%;
-  position: absolute;
-  margin-top: 55px;
   display: flex;
-  justify-content: space-around;
 }
 .icon {
   display: flex;
@@ -63,42 +60,59 @@
 @media screen and (max-width: 767px) {
   .container {
     width: 100%;
-    margin-bottom: 0;
-
-    position: absolute;
+    position: relative;
     left: 0;
+    display: flex;
+    /* align-items: center; */
+    z-index: 650;
+    height: 50vh;
+    margin: 0;
+  }
+  .btnContainer {
+    width: 100%;
+    height: fit-content;
+    background-color: #fff;
+    border-top: solid 1px #126035;
+    padding: 0;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 651;
   }
   .btnContainer h2 {
     font-size: 16px;
   }
-
+  .texture {
+    display: none;
+  }
   .allIcons {
-    width: 80%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 15px;
+    padding-top: 20px;
   }
-  .icon {
-    height: 100px;
-    width: 120px;
-  }
-  .icon img {
-    width: 70%;
-  }
+
   .imgCont {
-    height: 100px;
-    width: 100px;
-    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    border-radius: none;
     border: none;
-  }
-  .icon span {
-    font-size: 14px;
   }
   .icon {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
+    height: fit-content;
     width: fit-content;
     cursor: pointer;
+  }
+  .icon img {
+    width: 60px;
   }
 }

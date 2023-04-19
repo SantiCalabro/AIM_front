@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../assets/HomeHeader.jpg";
+import ResponsiveHeader from "../assets/HomeHeaderResp.jpg";
 import H from "../styles/HomeHeader.module.css";
 export default function HomeHeader() {
   return (
@@ -10,7 +11,8 @@ export default function HomeHeader() {
         </p>
       </div>
       <div className={H.imgContainer}>
-        <img src={Header} alt="" />
+        <img className={H.header} src={Header} alt="" />
+        <img className={H.respHeader} src={ResponsiveHeader} alt="" />
       </div>
       <div className={H.welcomeMsg}>
         <p>

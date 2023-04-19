@@ -55,7 +55,7 @@ export default function ProductsCategories() {
           </Link>
         </div>
       </div>
-      <img src={texture} alt="" />
+      <img className={P.texture} src={texture} alt="" />
     </div>
   );
 }

@@ -41,4 +41,22 @@
   .container {
     display: none;
   }
+  /* .container {
+    position: relative;
+    left: 0;
+    flex-direction: column;
+    height: 650px;
+  }
+
+  .infoContainer {
+    width: 90vw;
+  }
+  .imgContainer {
+    width: 100vw;
+    margin-top: 20px;
+  }
+  .infoContainer p,
+  .infoContainer ul li {
+    font-size: 14px;
+  } */
 }
