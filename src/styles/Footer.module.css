@@ -16,7 +16,7 @@
   height: fit-content;
   margin-right: 50px;
   position: relative;
-  top: 20px;
+  margin-top: 20px;
 }
 .logoContainer img {
   width: 100%;
@@ -46,7 +46,7 @@
     width: 100vw;
     display: block;
     justify-content: center;
-    height: 10rem;
+    height: 12rem;
     align-items: center;
     float: bottom;
   }
@@ -69,6 +69,8 @@
   .logoContainer {
     display: flex;
     width: 100%;
+    position: relative;
+    top: 20px;
   }
   .socialMedia {
     display: flex;

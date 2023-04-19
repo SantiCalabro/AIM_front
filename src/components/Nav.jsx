@@ -11,21 +11,31 @@ export default function Nav() {
   };
   return (
     <div className={N.container}>
-      <Link to="/">
-        <div className={N.logoContainer}>
+      <div className={N.logoContainer}>
+        <Link onClick={() => setNav(false)} to="/">
           <img src={Logo} alt="" />
-        </div>
-        <div onClick={HandleNav} className={N.responsiveMenu}>
-          <span className={nav ? N.activeTop : N.top}></span>
-          <span className={nav ? N.activeMiddle : N.middle}></span>
-          <span className={nav ? N.activeBottom : N.bottom}></span>
-        </div>
-      </Link>
+        </Link>
+      </div>
+      <div onClick={HandleNav} className={N.responsiveMenu}>
+        <span className={nav ? N.activeTop : N.top}></span>
+        <span className={nav ? N.activeMiddle : N.middle}></span>
+        <span className={nav ? N.activeBottom : N.bottom}></span>
+      </div>
+
       <div className={!nav ? N.responsiveClosedMenu : N.menu}>
         <ul className={!nav && N.hiddenList}>
-          <li>Nosotros</li>
-          <li>Productos</li>
-          <li>Contacto</li>
+          <Link onClick={() => setNav(false)} to="/">
+            <li>Inicio</li>
+          </Link>
+          <Link onClick={() => setNav(false)} to="/nosotros">
+            <li>Nosotros</li>
+          </Link>
+          <Link onClick={() => setNav(false)} to="/productos">
+            <li>Productos</li>
+          </Link>
+          <Link onClick={() => setNav(false)} to="/contacto">
+            <li>Contacto</li>
+          </Link>
         </ul>
         <div className={N.socialMedia}>
           <svg
