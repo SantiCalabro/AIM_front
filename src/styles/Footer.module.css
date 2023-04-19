@@ -43,15 +43,12 @@
 @media screen and (max-width: 767px) {
   .container {
     z-index: 990;
-    width: 100%;
-    flex-direction: column;
+    width: 100vw;
+    display: block;
     justify-content: center;
-    height: 12rem;
-    padding-bottom: 50px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: none;
+    height: 10rem;
+    align-items: center;
+    float: bottom;
   }
   .infoContainer {
     margin: auto;

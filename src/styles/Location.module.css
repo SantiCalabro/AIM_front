@@ -39,24 +39,24 @@
 }
 @media screen and (max-width: 767px) {
   .container {
-    display: none;
-  }
-  /* .container {
     position: relative;
     left: 0;
     flex-direction: column;
-    height: 650px;
+    margin: 0;
+    width: 100vw;
+    margin-bottom: 80px;
   }
 
   .infoContainer {
-    width: 90vw;
+    width: 80vw;
   }
   .imgContainer {
     width: 100vw;
     margin-top: 20px;
   }
+
   .infoContainer p,
   .infoContainer ul li {
     font-size: 14px;
-  } */
+  }
 }
