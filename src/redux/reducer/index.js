@@ -1,7 +1,45 @@
-const initialState = {};
+import {
+  GET_ALL_PRODUCTS,
+  GET_DETAIL,
+  FILTER_CATEGORY,
+  FILTER_ID,
+  FILTER_SEARCH,
+} from "../actions/actionNames";
+const initialState = {
+  detail: [],
+  allProducts: [],
+  category: [],
+  product: {},
+  filteredProducts: [],
+};
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
+    case GET_DETAIL:
+      return {
+        ...state,
+        detail: action.payload,
+      };
+    case GET_ALL_PRODUCTS:
+      return {
+        ...state,
+        allProducts: action.payload,
+      };
+    case FILTER_CATEGORY:
+      return {
+        ...state,
+        filteredProducts: action.payload,
+      };
+    case FILTER_ID:
+      return {
+        ...state,
+        product: action.payload,
+      };
+    case FILTER_SEARCH:
+      return {
+        ...state,
+        filteredProducts: action.payload,
+      };
     default:
       return state;
   }

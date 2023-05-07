@@ -1,0 +1,163 @@
+.container {
+  width: 100vw;
+  display: flex;
+  margin-top: 115px;
+}
+.picContainer {
+  width: 40vw;
+  padding: 20px;
+}
+.picContainer img {
+  width: 100%;
+}
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60vw;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.detailBox {
+  border-left: solid 1px #565656;
+  height: 100%;
+  padding-top: 50px;
+}
+.description {
+  height: fit-content;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.title {
+  font-size: 30px;
+  color: #565656;
+  margin-bottom: 20px;
+}
+.description p {
+  color: #565656;
+  font-size: 14px;
+}
+.switchContainer {
+  display: flex;
+  height: 300px;
+  width: 100%;
+  flex-direction: column;
+}
+.btnContainer {
+  display: flex;
+  border-top: solid 1px #565656;
+  border-bottom: solid 1px #565656;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+.offBtn {
+  border: solid 1px #565656;
+  background-color: transparent;
+  color: #565656;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  outline: 0;
+  border-radius: 5px;
+}
+.offBtn:hover {
+  background-color: #126035;
+  border: solid 1px #126035;
+  color: #fff;
+  transition: 0.15s ease-in-out;
+}
+.activeBtn {
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  background-color: #126035;
+  border: solid 1px #126035;
+  color: #fff;
+  outline: 0;
+  border-radius: 5px;
+}
+.activeBtn:focus {
+  outline: 0;
+  border: solid 1px #126035;
+}
+.switchContent {
+  padding: 20px;
+}
+
+.switchContent h4 {
+  font-size: 20px;
+  color: #126035;
+  margin-bottom: 10px;
+}
+.switchContainer p {
+  font-size: 14px;
+  color: #565656;
+}
+
+.back label {
+  cursor: pointer;
+  color: #126035;
+}
+
+.backBtn {
+  width: 35px;
+  cursor: pointer;
+}
+
+.back {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  position: relative;
+  bottom: 20px;
+}
+.back svg {
+  fill: #126035;
+  margin: 0;
+}
+.back label {
+  margin: 0;
+}
+@media screen and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+  .picContainer {
+    width: 100vw;
+    padding: 0px;
+  }
+  .infoContainer {
+    width: 100vw;
+    padding: 0;
+  }
+  .detailBox {
+    border-left: none;
+    height: 100%;
+    padding-top: 50px;
+  }
+  .switchContent {
+    background-color: #dddddd;
+    height: 300px;
+  }
+  .btnContainer {
+    background-color: #dddddd;
+  }
+}

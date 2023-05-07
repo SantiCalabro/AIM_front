@@ -1,0 +1,65 @@
+.container {
+  width: 100vw;
+  margin-top: 100px;
+}
+.header {
+  display: flex;
+}
+.header img {
+  width: 100%;
+}
+.header h3 {
+  position: absolute;
+  top: 250px;
+  right: 100px;
+  color: #fff;
+  font-size: 60px;
+  font-weight: 600;
+}
+.cardsContainer {
+  width: 70vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.back label {
+  cursor: pointer;
+  color: #126035;
+}
+
+.backBtn {
+  width: 35px;
+  cursor: pointer;
+}
+
+.back {
+  font-weight: 600;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  position: absolute;
+  left: 16vw;
+  margin-top: 50px;
+}
+.back svg {
+  fill: #126035;
+}
+.headerContainer {
+  width: 100vw;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .header h3 {
+    top: 190px;
+    right: 30px;
+    font-size: 30px;
+  }
+  .headerContainer {
+    height: 150px;
+  }
+}

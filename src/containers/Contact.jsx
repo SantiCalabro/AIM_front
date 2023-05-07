@@ -3,8 +3,17 @@ import ContactPic from "../assets/Contacto.jpg";
 import C from "../styles/Contact.module.css";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import Map from "../components/Map";
+import { useJsApiLoader } from "@react-google-maps/api";
 
 export default function Contact() {
+  const mapsKey = import.meta.env.VITE_REACT_APP_MAPS_KEY;
+
+  const { isLoaded } = useJsApiLoader({
+    id: mapsKey,
+    googleMapsApiKey: mapsKey,
+  });
+
   const [input, setInput] = useState({
     user_name: "",
     user_email: "",
@@ -101,7 +110,9 @@ export default function Contact() {
         <img src={ContactPic} alt="" />
       </div>
       <div className={C.infoContainer}>
-        <div className={C.mapContainer}></div>
+        <div className={C.mapContainer}>
+          <Map isLoaded={isLoaded} />
+        </div>
         <div className={C.formContainer}>
           <form ref={form} onSubmit={sendEmail}>
             <div className={C.form}>

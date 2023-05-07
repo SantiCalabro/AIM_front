@@ -22,19 +22,19 @@ export default function Nav() {
         <span className={nav ? N.activeBottom : N.bottom}></span>
       </div>
 
-      <div className={!nav ? N.responsiveClosedMenu : N.menu}>
+      <div className={nav ? N.menu : N.responsiveClosedMenu}>
         <ul className={!nav && N.hiddenList}>
           <Link onClick={() => setNav(false)} to="/">
-            <li>Inicio</li>
+            <li className={N.link}>Inicio</li>
           </Link>
           <Link onClick={() => setNav(false)} to="/nosotros">
-            <li>Nosotros</li>
+            <li className={N.link}>Nosotros</li>
           </Link>
           <Link onClick={() => setNav(false)} to="/productos">
-            <li>Productos</li>
+            <li className={N.link}>Productos</li>
           </Link>
           <Link onClick={() => setNav(false)} to="/contacto">
-            <li>Contacto</li>
+            <li className={N.link}>Contacto</li>
           </Link>
         </ul>
         <div className={N.socialMedia}>

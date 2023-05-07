@@ -9,8 +9,103 @@
 }
 .container h3 {
   position: absolute;
-  top: 300px;
+  top: 350px;
   color: #fff;
   font-size: 25px;
   left: 50px;
+}
+.title {
+  width: 100vw;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.title h1 {
+  font-size: 30px;
+  color: #565656;
+}
+.filterContainer {
+  width: 100vw;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #dddddd;
+  margin-bottom: 30px;
+}
+.filterContainer select {
+  outline: 0;
+  padding: 0;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #565656;
+}
+.searchbar {
+  display: flex;
+  align-items: center;
+  border: solid 1px #565656;
+  width: fit-content;
+  border-radius: 20px;
+  padding-left: 10px;
+}
+.searchbar input {
+  margin-left: 5px;
+  border: none;
+  width: 270px;
+  background-color: transparent;
+}
+.searchbar input:focus {
+  outline: 0;
+}
+.searchbar svg {
+  fill: #565656;
+}
+.cardsContainer {
+  width: 70vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 767px) {
+  .header {
+    margin-top: 90px;
+  }
+  .headerTitle {
+    display: flex;
+    position: absolute;
+    top: 170px;
+    width: 100vw;
+  }
+  .container h3 {
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    left: auto;
+    top: auto;
+  }
+  .title h1 {
+    font-size: 18px;
+  }
+  .filterContainer {
+    flex-direction: column;
+  }
+  .filterContainer select {
+    font-size: 12px;
+    padding-right: 0px;
+  }
+  .searchbar {
+    margin-top: 10px;
+  }
+  .searchbar input {
+    width: 240px;
+    font-size: 12px;
+  }
+  .searchbar svg {
+    scale: 0.8;
+  }
 }

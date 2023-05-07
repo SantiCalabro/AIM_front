@@ -2,10 +2,10 @@ import React from "react";
 import P from "../styles/ProductCategories.module.css";
 import texture from "../assets/GrassTexture.jpg";
 import Herbicida from "../assets/Herbicida.svg";
-import Fungicida from "../assets/Fungicida.svg";
+import Agroalimento from "../assets/Coadyuvante.svg";
+import Alimentos from "../assets/Alimentos.svg";
 import Semilla from "../assets/Semilla.svg";
 import Insecticida from "../assets/Insecticida.svg";
-import Coadyuvante from "../assets/Coadyuvante.svg";
 import { Link } from "react-router-dom";
 export default function ProductsCategories() {
   return (
@@ -13,38 +13,35 @@ export default function ProductsCategories() {
       <div className={P.btnContainer}>
         <h2>Nuestros productos</h2>
         <div className={P.allIcons}>
-          <Link to="/herbicidas">
+          <Link to="/agroquimicos">
             <div className={P.icon}>
               <div className={P.imgCont}>
                 <img src={Herbicida} alt="" />
               </div>
-              <span>Herbicidas</span>
+              <span>Agroquímicos</span>
             </div>
           </Link>
-          <Link to="/insecticidas">
+          <Link to="/alimentos">
             <div className={P.icon}>
               <div className={P.imgCont}>
-                <img src={Insecticida} alt="" />
+                <img src={Alimentos} alt="" />
               </div>
-              <span>Insecticidas</span>
+              <span>Alimentos</span>
             </div>
           </Link>
-          <Link to="/fungicidas">
+          <Link
+            to="/agroalimentos"
+            id="agroalimentos"
+            onClick={e => handleClick(e)}
+          >
             <div className={P.icon}>
               <div className={P.imgCont}>
-                <img src={Fungicida} alt="" />
+                <img src={Agroalimento} alt="" />
               </div>
-              <span>Fungicidas</span>
+              <span>Agroalimentos</span>
             </div>
           </Link>
-          <Link to="/coadyuvantes">
-            <div className={P.icon}>
-              <div className={P.imgCont}>
-                <img src={Coadyuvante} alt="" />
-              </div>
-              <span>Coadyuvantes</span>
-            </div>
-          </Link>
+
           <Link to="/semillas">
             <div className={P.icon}>
               <div className={P.imgCont}>

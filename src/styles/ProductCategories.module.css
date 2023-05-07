@@ -25,10 +25,13 @@
 .btnContainer h2 {
   color: #126035;
   text-align: center;
-  width: 100%;
+  width: 60%;
   height: fit-content;
   padding-top: 10px;
-  border-bottom: solid 1px #126035;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #b5d4c3;
+  font-weight: 600;
+  font-size: 20px;
 }
 .allIcons {
   width: 70%;
@@ -61,7 +64,7 @@
   color: #126035;
 }
 .icon:hover > .imgCont {
-  border: solid rgb(150, 150, 150);
+  border: solid #b5d4c3;
   transition: 0.15s ease-in-out;
 }
 @media screen and (max-width: 767px) {

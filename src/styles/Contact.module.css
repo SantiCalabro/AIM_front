@@ -30,10 +30,12 @@
 }
 
 .mapContainer {
-  width: 50vw;
-  border-right: solid 1px #fff;
+  width: 600px;
   height: 400px;
+  display: flex;
+  margin-left: 0;
 }
+
 .formContainer {
   width: 50vw;
   height: 400px;

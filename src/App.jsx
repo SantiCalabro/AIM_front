@@ -8,20 +8,24 @@ import Detail from "./containers/Detail";
 import Contact from "./containers/Contact";
 import ProductCategory from "./containers/ProductCategory";
 import Products from "./containers/Products";
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <Nav />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/nosotros" element={<OurCompany />} />
-          <Route exact path="/detail/:id" element={<Detail />} />
-          <Route exact path="/contacto" element={<Contact />} />
-          <Route exact path="/:category" element={<ProductCategory />} />
-          <Route exact path="/productos" element={<Products />} />
-        </Routes>
+        <ScrollToTop>
+          <Nav />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/nosotros" element={<OurCompany />} />
+            <Route exact path="/detail/:id" element={<Detail />} />
+            <Route exact path="/contacto" element={<Contact />} />
+            <Route exact path="/:category" element={<ProductCategory />} />
+            <Route exact path="/productos" element={<Products />} />
+          </Routes>
+        </ScrollToTop>
       </BrowserRouter>
+
       <Footer />
     </div>
   );

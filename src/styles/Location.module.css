@@ -16,27 +16,31 @@
   height: 100%;
 }
 .infoContainer {
-  width: 35vw;
+  margin-left: 80px;
   padding-top: 20px;
 }
 .infoContainer p {
   color: #565656;
+  font-size: 14px;
+}
+.central {
+  width: 65%;
+  margin-left: 0px;
 }
 .infoContainer h2 {
   color: #126035;
-}
-.secondParagraph {
-  margin-top: 20px;
+  font-weight: 600;
 }
 
 .infoContainer ul {
   padding: 0;
   padding-left: 20px;
-  padding-top: 10px;
+  padding-bottom: 20px;
   list-style: square;
 }
 .infoContainer ul li {
   color: #565656;
+  font-size: 14px;
 }
 @media screen and (max-width: 767px) {
   .container {

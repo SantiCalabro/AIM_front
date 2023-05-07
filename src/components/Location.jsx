@@ -6,18 +6,22 @@ export default function Location() {
     <div className={L.container}>
       <div className={L.infoContainer}>
         <h2>Dónde estamos</h2>
-        <p>Nuestra Casa Central está ubicada en la localidad</p>
-        <p>
-          de <strong> San Vicente, Misiones.</strong>
+        <p className={L.central}>
+          Nuestra Casa Central está ubicada en la localidad de{" "}
+          <strong> San Vicente, Misiones.</strong>
         </p>
+
         <p className={L.secondParagraph}>
-          Además, contamos con tres sucursales ubicadas en:
+          Además, contamos con seis sucursales más, ubicadas en:
         </p>
 
         <ul>
           <li>El Soberbio, Misiones</li>
+          <li>Bernardo de Yrigoyen, Misiones</li>
           <li>Posadas, Misiones</li>
-          <li>Clorinda, Formosa</li>
+          <li>La Quiaca, Jujuy</li>
+          <li>El Salvador Mazza, Salta</li>
+          <li>General Mosconi, Salta</li>
         </ul>
       </div>
       <div className={L.imgContainer}>
