@@ -13,6 +13,7 @@
   color: #fff;
   font-size: 25px;
   left: 50px;
+  font-weight: 600;
 }
 .title {
   width: 100vw;
@@ -23,14 +24,16 @@
 .title h1 {
   font-size: 30px;
   color: #565656;
+  font-weight: 600;
 }
 .filterContainer {
-  width: 100vw;
+  width: 100%;
   display: flex;
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #dddddd;
   margin-bottom: 30px;
+  justify-content: center;
 }
 .filterContainer select {
   outline: 0;
@@ -43,6 +46,7 @@
   border-radius: 5px;
   background-color: transparent;
   color: #565656;
+  margin-left: auto;
 }
 .searchbar {
   display: flex;
@@ -55,7 +59,8 @@
 .searchbar input {
   margin-left: 5px;
   border: none;
-  width: 270px;
+  width: 320px;
+  font-size: 14px;
   background-color: transparent;
 }
 .searchbar input:focus {
@@ -74,13 +79,19 @@
 @media screen and (max-width: 767px) {
   .header {
     margin-top: 90px;
+    height: 200px;
+    display: flex;
+  }
+  .header img {
+    object-fit: cover;
   }
   .headerTitle {
     display: flex;
     position: absolute;
-    top: 170px;
+    top: 220px;
     width: 100vw;
   }
+
   .container h3 {
     position: relative;
     color: #fff;
@@ -96,7 +107,8 @@
   }
   .filterContainer select {
     font-size: 12px;
-    padding-right: 0px;
+    padding-right: auto;
+    margin: auto;
   }
   .searchbar {
     margin-top: 10px;
@@ -107,5 +119,10 @@
   }
   .searchbar svg {
     scale: 0.8;
+  }
+  .headerTitle h3 {
+    font-size: 20px;
+    text-align: center;
+    width: 80%;
   }
 }

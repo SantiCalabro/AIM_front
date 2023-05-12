@@ -29,11 +29,22 @@
 }
 .address p {
   color: #fff;
+  font-size: 18px;
+}
+.socialMedia {
+  border-top: solid 1px #fff;
+  padding-top: 20px;
+}
+.socialMedia h6 {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 10px;
 }
 .socialMedia svg {
   fill: #fff;
   margin-right: 10px;
   cursor: pointer;
+  scale: 1.2;
 }
 
 .socialMedia svg:hover {
@@ -72,10 +83,50 @@
     position: relative;
     top: 20px;
   }
-  .socialMedia {
+
+  .container {
+    z-index: 990;
+    width: 100vw;
+    display: block;
+    justify-content: center;
+    height: 12rem;
+    align-items: center;
+    float: bottom;
+    padding-bottom: 20px;
+  }
+  .infoContainer {
+    margin: auto;
+  }
+
+  .address {
     display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+  .address p {
+    font-size: 12px;
+    text-align: center;
+  }
+  .logoContainer img {
+    width: 50%;
+  }
+  .logoContainer {
+    display: flex;
+    width: 100%;
+    position: relative;
+    bottom: 0px;
+  }
+  .socialMedia {
+    display: block;
+    border: none;
     width: fit-content;
-    padding-left: 10px;
-    margin-bottom: 10px;
+    padding-left: 0px;
+    justify-content: center;
+    text-align: center;
+    margin-top: -20px;
+  }
+  .socialMedia svg {
+    margin-right: 5px;
+    margin-left: 5px;
   }
 }

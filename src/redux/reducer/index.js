@@ -3,6 +3,7 @@ import {
   GET_DETAIL,
   FILTER_CATEGORY,
   FILTER_ID,
+  TRANSLATE,
   FILTER_SEARCH,
 } from "../actions/actionNames";
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
   category: [],
   product: {},
   filteredProducts: [],
+  language: "ESP",
 };
 
 function rootReducer(state = initialState, action) {
@@ -24,6 +26,11 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         allProducts: action.payload,
+      };
+    case TRANSLATE:
+      return {
+        ...state,
+        language: action.payload,
       };
     case FILTER_CATEGORY:
       return {

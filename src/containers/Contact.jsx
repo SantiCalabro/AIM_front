@@ -5,10 +5,12 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Map from "../components/Map";
 import { useJsApiLoader } from "@react-google-maps/api";
-
+import { useSelector } from "react-redux";
 export default function Contact() {
   const mapsKey = import.meta.env.VITE_REACT_APP_MAPS_KEY;
-
+  const lang = useSelector(state => state.language);
+  const ESP = lang === "ESP";
+  const ENG = lang === "ENG";
   const { isLoaded } = useJsApiLoader({
     id: mapsKey,
     googleMapsApiKey: mapsKey,
@@ -94,9 +96,19 @@ export default function Contact() {
     <div className={C.container}>
       <div className={C.msgContainer}>
         <div className={msg ? C.msg : C.hiddenMsg}>
-          <h3>Mensaje enviado!</h3>
+          <h3>
+            {ESP
+              ? "Mensaje enviado!"
+              : ENG
+              ? "Message sent!"
+              : "Mensagem enviada!"}
+          </h3>
           <p className={C.paragraph}>
-            ¡Muchas gracias! Recibirás una respuesta a la brevedad.
+            {ESP
+              ? "¡Muchas gracias! Recibirás una respuesta a la brevedad."
+              : ENG
+              ? "Thank you! You will receive a reply as soon as possible."
+              : "Obrigado! Receberá uma resposta em breve."}
           </p>
           <div className={C.btnCont}>
             <button onClick={() => setMsg(false)}>Ok!</button>
@@ -105,9 +117,41 @@ export default function Contact() {
       </div>
       <div className={msg && C.background}></div>
 
-      <h1>Contactanos</h1>
+      <h1 className={C.headerTitle}>
+        {ESP ? "Contactanos" : ENG ? "Contact us" : "Contactar"}
+      </h1>
       <div className={C.headerContainer}>
         <img src={ContactPic} alt="" />
+      </div>
+      <div className={C.contactContainer}>
+        <h2>
+          {ESP
+            ? "No dudes en contactarnos"
+            : ENG
+            ? "Don't hesitate to contact us"
+            : "Não hesite em contactar-nos"}
+        </h2>
+        <p>
+          {ESP
+            ? "Haz click en el número telefónico para escribirnos vía WhatsApp"
+            : ENG
+            ? "Click on the phone number below to write us via WhatsApp."
+            : "Clique no número de telefone para nos escrever via WhatsApp"}
+        </p>
+        <div className={C.contact}>
+          <div className={C.region}>
+            <h3>Misiones</h3>
+            <p>Lorem ipsum dolor - </p> <p className={C.phone}>123 XXX XXX</p>
+          </div>
+          <div className={C.region}>
+            <h3>Salta</h3>
+            <p>Lorem ipsum dolor - </p> <p className={C.phone}>123 XXX XXX</p>
+          </div>
+          <div className={C.region}>
+            <h3>Brasil</h3>
+            <p>Lorem ipsum dolor - </p> <p className={C.phone}>123 XXX XXX</p>
+          </div>
+        </div>
       </div>
       <div className={C.infoContainer}>
         <div className={C.mapContainer}>
@@ -117,7 +161,9 @@ export default function Contact() {
           <form ref={form} onSubmit={sendEmail}>
             <div className={C.form}>
               <div className={C.name}>
-                <label htmlFor="">Nombre</label>
+                <label htmlFor="">
+                  {ESP ? "Nombre" : ENG ? "Name" : "Nome"}
+                </label>
                 <span className={C.error}>
                   {error.user_name && error.user_name}
                 </span>
@@ -133,7 +179,13 @@ export default function Contact() {
                 />
               </div>
               <div className={C.mail}>
-                <label htmlFor="">Correo electrónico</label>
+                <label htmlFor="">
+                  {ESP
+                    ? "Correo electrónico"
+                    : ENG
+                    ? "Email"
+                    : "Correio electrónico"}
+                </label>
                 <span className={C.error}>
                   {error.user_email && error.user_email}
                 </span>
@@ -149,7 +201,9 @@ export default function Contact() {
                 />
               </div>
               <div className={C.message}>
-                <label htmlFor="">Mensaje</label>
+                <label htmlFor="">
+                  {ESP ? "Mensaje" : ENG ? "Message" : "Mensagem"}
+                </label>
                 <span className={C.error}>
                   {error.message && error.message}
                 </span>
@@ -171,7 +225,7 @@ export default function Contact() {
                   disable && e.preventDefault();
                 }}
               >
-                Enviar
+                {ESP ? "Enviar" : ENG ? "Send" : "Enviar"}
               </button>
             </div>
           </form>

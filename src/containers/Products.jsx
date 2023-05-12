@@ -16,6 +16,9 @@ export default function Products() {
   const products = useSelector(state => state.allProducts);
   const filtered = useSelector(state => state.filteredProducts);
   const [search, setSearch] = useState(products);
+  const lang = useSelector(state => state.language);
+  const ESP = lang === "ESP";
+  const ENG = lang === "ENG";
 
   React.useEffect(() => {
     dispatch(getAllProducts());
@@ -37,7 +40,13 @@ export default function Products() {
     <div className={P.container}>
       <div className={P.header}>
         <div className={P.headerTitle}>
-          <h3>Soluciones efectivas para tus cultivos</h3>
+          <h3>
+            {ESP
+              ? "Soluciones efectivas para tus cultivos"
+              : ENG
+              ? "Effective solutions for your crops"
+              : "Soluções eficazes para as suas culturas"}
+          </h3>
         </div>
         <img
           src="https://res.cloudinary.com/dcbswyqrd/image/upload/v1682120141/agroquimicos_mzrggv.jpg"
@@ -45,12 +54,22 @@ export default function Products() {
         />
       </div>
       <div className={P.title}>
-        <h1>Nuestros productos</h1>
+        <h1>
+          {ESP
+            ? "Nuestros productos"
+            : ENG
+            ? "Our products"
+            : "Os nossos produtos"}
+        </h1>
       </div>
       <div className={P.filterContainer}>
         <select name="" id="" onChange={e => handleSelect(e)}>
-          <option value="Categorías">Categorías</option>
-          <option value="herbicida">Herbicidas</option>
+          <option value="Categorías">
+            {ESP ? "Categorías" : ENG ? "Categories" : "Categorias"}
+          </option>
+          <option value="herbicida">
+            {ESP ? "Herbicidas" : ENG ? "Herbicides" : "Herbicidas"}
+          </option>
           <option value="insecticida">Insecticidas</option>
           <option value="fungicida">Fungicidas</option>
           <option value="coadyuvante">Coadyuvantes</option>
@@ -70,7 +89,13 @@ export default function Products() {
           </svg>
           <input
             type="text"
-            placeholder="Busca un producto o principio activo"
+            placeholder={
+              ESP
+                ? "Busca un producto o principio activo"
+                : ENG
+                ? "Search for a product or active ingredient"
+                : "Procurar um produto ou ingrediente activo"
+            }
             onChange={e => handleChange(e)}
           />
         </div>

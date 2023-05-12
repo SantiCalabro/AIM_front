@@ -1,12 +1,18 @@
 import React from "react";
 import F from "../styles/Footer.module.css";
 import Logo from "../assets/LogoBlanco.png";
-
+import { useSelector } from "react-redux";
 export default function Footer() {
+  const lang = useSelector(state => state.language);
+  const ESP = lang === "ESP";
+  const ENG = lang === "ENG";
   return (
     <div className={F.bodyCont}>
       <div className={F.container}>
         <div className={F.infoContainer}>
+          <div className={F.address}>
+            <p>San Vicente, Misiones, Argentina</p>
+          </div>
           <div className={F.socialMedia}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -24,10 +30,6 @@ export default function Footer() {
             >
               <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
             </svg>
-          </div>
-          <div className={F.address}>
-            <p>Ruta Provincial 13 km 49,5 </p>
-            <p>San Vicente, Misiones, Argentina</p>
           </div>
         </div>
         <div className={F.logoContainer}>

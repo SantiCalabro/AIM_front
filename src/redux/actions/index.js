@@ -5,12 +5,17 @@ import {
   FILTER_CATEGORY,
   FILTER_ID,
   FILTER_SEARCH,
+  TRANSLATE,
 } from "./actionNames";
 
 const URL = "http://localhost:3001";
 
 export const get_detail = payload => {
   return { type: GET_DETAIL, payload };
+};
+
+export const translate = payload => {
+  return { type: TRANSLATE, payload };
 };
 
 export const getAllProducts = () => {

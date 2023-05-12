@@ -34,17 +34,15 @@
   .container {
     position: relative;
     left: 0;
-    top: 0;
+    top: 30px;
     width: 100vw;
     margin: 0;
   }
-  /* .headerTitle {
-    position: absolute;
+  .headerTitle {
     width: 100%;
-    font-size: 12px;
-    top: 120px;
+    font-size: 16px;
     left: 0;
-  } */
+  }
   .headerTitle p {
     text-align: center;
     width: 80%;
@@ -61,5 +59,13 @@
   .welcomeMsg p {
     width: 80%;
     font-size: 12px;
+  }
+  .responsiveCarousel {
+    height: 200px;
+    display: flex;
+  }
+  .responsiveCarousel img {
+    width: fit-content;
+    object-fit: cover;
   }
 }

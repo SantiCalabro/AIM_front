@@ -3,18 +3,52 @@ import Logo from "../assets/LogoColor.png";
 import N from "../styles/Nav.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { translate } from "../redux/actions/index";
+
 export default function Nav() {
   const [nav, setNav] = useState(false);
-
   const HandleNav = () => {
     setNav(!nav);
   };
+  const dispatch = useDispatch();
+  const lang = useSelector(state => state.language);
+  const ESP = "ESP";
+  const POR = "POR";
+  const ENG = "ENG";
+
+  const switchLang = e => {
+    dispatch(translate(e.target.innerText));
+  };
+
   return (
     <div className={N.container}>
       <div className={N.logoContainer}>
         <Link onClick={() => setNav(false)} to="/">
           <img src={Logo} alt="" />
         </Link>
+      </div>
+      <div className={N.countriesContainer}>
+        <div className={N.countries}>
+          <div
+            className={lang === ESP ? N.countryOn : N.country}
+            onClick={e => switchLang(e)}
+          >
+            <span>ESP</span>
+          </div>
+          <div
+            className={lang === ENG ? N.countryOn : N.country}
+            onClick={e => switchLang(e)}
+          >
+            <span>ENG</span>
+          </div>
+          <div
+            className={lang === POR ? N.countryOn : N.country}
+            onClick={e => switchLang(e)}
+          >
+            <span>POR</span>
+          </div>
+        </div>
       </div>
       <div onClick={HandleNav} className={N.responsiveMenu}>
         <span className={nav ? N.activeTop : N.top}></span>
@@ -25,19 +59,38 @@ export default function Nav() {
       <div className={nav ? N.menu : N.responsiveClosedMenu}>
         <ul className={!nav && N.hiddenList}>
           <Link onClick={() => setNav(false)} to="/">
-            <li className={N.link}>Inicio</li>
+            <li className={N.link}>
+              {lang === ESP ? "Inicio" : lang === POR ? "Início" : "Home"}
+            </li>
           </Link>
           <Link onClick={() => setNav(false)} to="/nosotros">
-            <li className={N.link}>Nosotros</li>
+            <li className={N.link}>
+              {" "}
+              {lang === ESP ? "Nosotros" : lang === POR ? "Nós" : "About us"}
+            </li>
           </Link>
           <Link onClick={() => setNav(false)} to="/productos">
-            <li className={N.link}>Productos</li>
+            <li className={N.link}>
+              {" "}
+              {lang === ESP
+                ? "Productos"
+                : lang === POR
+                ? "Produtos"
+                : "Products"}
+            </li>
           </Link>
           <Link onClick={() => setNav(false)} to="/contacto">
-            <li className={N.link}>Contacto</li>
+            <li className={N.link}>
+              {" "}
+              {lang === ESP
+                ? "Contactanos"
+                : lang === POR
+                ? "Contactar"
+                : "Contact us"}
+            </li>
           </Link>
         </ul>
-        <div className={N.socialMedia}>
+        <div className={nav ? N.socialMedia : N.socialMediaHidden}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

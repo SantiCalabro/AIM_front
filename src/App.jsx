@@ -9,6 +9,7 @@ import Contact from "./containers/Contact";
 import ProductCategory from "./containers/ProductCategory";
 import Products from "./containers/Products";
 import ScrollToTop from "./components/ScrollToTop";
+import ErrorPath from "./containers/ErrorPath";
 function App() {
   return (
     <div>
@@ -18,10 +19,15 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/nosotros" element={<OurCompany />} />
+            <Route
+              exact
+              path="/category/:category"
+              element={<ProductCategory />}
+            />
             <Route exact path="/detail/:id" element={<Detail />} />
             <Route exact path="/contacto" element={<Contact />} />
-            <Route exact path="/:category" element={<ProductCategory />} />
             <Route exact path="/productos" element={<Products />} />
+            <Route path="*" element={<ErrorPath />} />
           </Routes>
         </ScrollToTop>
       </BrowserRouter>

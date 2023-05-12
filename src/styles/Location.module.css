@@ -2,9 +2,7 @@
   width: 100%;
   display: flex;
   position: relative;
-  bottom: 5px;
   height: fit-content;
-  margin-bottom: -5px;
   background-color: #fff;
 }
 .imgContainer {
@@ -48,12 +46,14 @@
     left: 0;
     flex-direction: column;
     margin: 0;
+
     width: 100vw;
     margin-bottom: 80px;
   }
 
   .infoContainer {
-    width: 80vw;
+    width: 80%;
+    margin: auto;
   }
   .imgContainer {
     width: 100vw;

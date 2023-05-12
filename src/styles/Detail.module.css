@@ -31,18 +31,20 @@
 }
 .title {
   font-size: 30px;
-  color: #565656;
-  margin-bottom: 20px;
+  color: #126035;
+  margin-top: 20px;
+  font-weight: 600;
 }
-.description p {
+.switchContainer h5 {
   color: #565656;
   font-size: 14px;
+  margin-left: 20px;
 }
 .switchContainer {
   display: flex;
   height: 300px;
-  width: 100%;
   flex-direction: column;
+  margin-top: -10px;
 }
 .btnContainer {
   display: flex;
@@ -147,6 +149,7 @@
   .infoContainer {
     width: 100vw;
     padding: 0;
+    padding-left: 20px;
   }
   .detailBox {
     border-left: none;
