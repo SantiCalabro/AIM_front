@@ -1,23 +1,26 @@
 import axios from "axios";
 import {
-  GET_DETAIL,
   GET_ALL_PRODUCTS,
   FILTER_CATEGORY,
   FILTER_ID,
   FILTER_SEARCH,
   TRANSLATE,
+  FILTER_TYPE,
+  CLEAR_PRODUCT,
+  CLEAR_FILTERED,
 } from "./actionNames";
 
 const URL = "http://localhost:3001";
 
-export const get_detail = payload => {
-  return { type: GET_DETAIL, payload };
-};
-
 export const translate = payload => {
   return { type: TRANSLATE, payload };
 };
-
+export const clearProduct = () => {
+  return { type: CLEAR_PRODUCT };
+};
+export const clearFiltered = () => {
+  return { type: CLEAR_FILTERED };
+};
 export const getAllProducts = () => {
   return function (dispatch) {
     axios
@@ -41,6 +44,22 @@ export const filterCategory = category => {
       .then(res => {
         dispatch({
           type: FILTER_CATEGORY,
+          payload: res.data,
+        });
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+};
+
+export const filterType = type => {
+  return function (dispatch) {
+    axios
+      .get(`${URL}/products/${type}`)
+      .then(res => {
+        dispatch({
+          type: FILTER_TYPE,
           payload: res.data,
         });
       })
@@ -76,6 +95,10 @@ export const filterBySearchbar = search => {
           });
         })
         .catch(e => {
+          dispatch({
+            type: FILTER_SEARCH,
+            payload: [],
+          });
           throw new Error();
         });
     };

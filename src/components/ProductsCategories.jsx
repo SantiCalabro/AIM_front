@@ -1,16 +1,49 @@
 import React from "react";
 import P from "../styles/ProductCategories.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Herbicida from "../assets/Herbicida.svg";
 import Agroalimento from "../assets/Coadyuvante.svg";
 import Alimentos from "../assets/Alimentos.svg";
 import Semilla from "../assets/Semilla.svg";
 import { Link } from "react-router-dom";
+import { filterCategory } from "../redux/actions";
+
 export default function ProductsCategories() {
   const lang = useSelector(state => state.language);
   const ESP = lang === "ESP";
-  const POR = lang === "POR";
   const ENG = lang === "ENG";
+  const dispatch = useDispatch();
+
+  const item = [
+    {
+      spanish: "Agroquímicos",
+      port: "Agroquímicos",
+      english: "Agrochemicals",
+      pic: Herbicida,
+      category: "agroquimicos",
+    },
+    {
+      spanish: "Alimentos",
+      port: "Alimentos",
+      english: "Food",
+      pic: Alimentos,
+      category: "alimentos",
+    },
+    {
+      spanish: "Agroalimentos",
+      port: "Agro-alimentar",
+      english: "Agrifood",
+      pic: Agroalimento,
+      category: "agroalimentos",
+    },
+    {
+      spanish: "Semillas",
+      port: "Sementes",
+      english: "Seeds",
+      pic: Semilla,
+      category: "semillas",
+    },
+  ];
   return (
     <div className={P.container}>
       <div className={P.btnContainer}>
@@ -22,47 +55,20 @@ export default function ProductsCategories() {
             : "Os nossos produtos"}
         </h2>
         <div className={P.allIcons}>
-          <Link to="/category/agroquimicos">
-            <div className={P.icon}>
-              <div className={P.imgCont}>
-                <img src={Herbicida} alt="" />
+          {item.map((el, i) => (
+            <Link
+              key={i}
+              onClick={() => filterCategory(el.category)}
+              to={`/category/${el.category}`}
+            >
+              <div className={P.icon}>
+                <div className={P.imgCont}>
+                  <img src={el.pic} alt="" />
+                </div>
+                <span>{ESP ? el.spanish : ENG ? el.english : el.port}</span>
               </div>
-              <span>
-                {ESP ? "Agroquímicos" : ENG ? "Agrochemicals" : "Agroquímicos"}
-              </span>
-            </div>
-          </Link>
-          <Link to="/category/alimentos">
-            <div className={P.icon}>
-              <div className={P.imgCont}>
-                <img src={Alimentos} alt="" />
-              </div>
-              <span>{ESP ? "Alimentos" : ENG ? "Food" : "Alimentos"}</span>
-            </div>
-          </Link>
-          <Link
-            to="/category/agroalimentos"
-            id="agroalimentos"
-            onClick={e => handleClick(e)}
-          >
-            <div className={P.icon}>
-              <div className={P.imgCont}>
-                <img src={Agroalimento} alt="" />
-              </div>
-              <span>
-                {ESP ? "Agrolimentos" : ENG ? "Agrifood" : "Agro-alimentar"}
-              </span>
-            </div>
-          </Link>
-
-          <Link to="/category/semillas">
-            <div className={P.icon}>
-              <div className={P.imgCont}>
-                <img src={Semilla} alt="" />
-              </div>
-              <span> {ESP ? "Semillas" : ENG ? "Seeds" : "Sementes"}</span>
-            </div>
-          </Link>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

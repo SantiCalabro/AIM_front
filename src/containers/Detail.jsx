@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom";
 import D from "../styles/Detail.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { filterById } from "../redux/actions";
+import { filterById, clearProduct } from "../redux/actions";
 import React from "react";
-import { useState } from "react";
+
 export default function Detail() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -14,6 +14,8 @@ export default function Detail() {
   const ENG = lang === "ENG";
   React.useEffect(() => {
     dispatch(filterById(params.id));
+
+    return () => dispatch(clearProduct());
   }, [dispatch]);
 
   const product = useSelector(state => state.product);

@@ -27,13 +27,17 @@
   font-weight: 600;
 }
 .filterContainer {
-  width: 100%;
+  width: 100vw;
   display: flex;
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #dddddd;
   margin-bottom: 30px;
   justify-content: center;
+}
+.filters {
+  display: flex;
+  width: 67vw;
 }
 .filterContainer select {
   outline: 0;
@@ -46,7 +50,7 @@
   border-radius: 5px;
   background-color: transparent;
   color: #565656;
-  margin-left: auto;
+  margin-left: 0;
 }
 .searchbar {
   display: flex;
@@ -55,6 +59,7 @@
   width: fit-content;
   border-radius: 20px;
   padding-left: 10px;
+  margin-right: 0px;
 }
 .searchbar input {
   margin-left: 5px;
@@ -76,6 +81,89 @@
   gap: 15px;
   margin-bottom: 50px;
 }
+.missingProduct {
+  display: flex;
+  flex-direction: column;
+}
+
+.missingProduct h4 {
+  position: relative;
+  color: #126035;
+  font-weight: 600;
+  margin: auto;
+  bottom: auto;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+.missingProduct button {
+  border: none;
+  border: solid 1px #126035;
+  background-color: #126035;
+  color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+  outline: 0;
+}
+
+.missingProduct button:hover {
+  transition: 0.15s ease-in-out;
+  border: solid 1px #126035;
+  background-color: transparent;
+  color: #126035;
+}
+.pagination {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  border-top: solid 1px #49aa75;
+  padding-top: 10px;
+  width: 100%;
+}
+.paginate {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.paginate li {
+  font-weight: 400;
+  cursor: pointer;
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 30px;
+  margin-right: 2px;
+  margin-left: 2px;
+  background-color: #fff;
+}
+.paginate li:hover {
+  transition: 0.15s ease-in-out;
+  outline: 0;
+  color: #49aa75;
+}
+.paginate .active {
+  color: #49aa75;
+
+  border: solid 1px #49aa75;
+}
+
+.paginate li {
+  text-decoration: none;
+}
+.previousNext a {
+  text-decoration: none;
+  font-weight: 200;
+  color: #126035;
+}
+
 @media screen and (max-width: 767px) {
   .header {
     margin-top: 90px;
@@ -102,8 +190,9 @@
   .title h1 {
     font-size: 18px;
   }
-  .filterContainer {
+  .filters {
     flex-direction: column;
+    width: 100%;
   }
   .filterContainer select {
     font-size: 12px;
@@ -112,6 +201,7 @@
   }
   .searchbar {
     margin-top: 10px;
+    margin-right: auto;
   }
   .searchbar input {
     width: 240px;

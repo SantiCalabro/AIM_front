@@ -53,6 +53,59 @@
   display: flex;
   align-items: center;
 }
+
+.pagination {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  border-top: solid 1px #49aa75;
+  padding-top: 10px;
+  width: 100%;
+}
+.paginate {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.paginate li {
+  font-weight: 400;
+  cursor: pointer;
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 30px;
+  margin-right: 2px;
+  margin-left: 2px;
+  background-color: #fff;
+}
+.paginate li:hover {
+  transition: 0.15s ease-in-out;
+  outline: 0;
+  color: #49aa75;
+}
+.paginate .active {
+  color: #49aa75;
+
+  border: solid 1px #49aa75;
+}
+
+.paginate li {
+  text-decoration: none;
+}
+.previousNext a {
+  text-decoration: none;
+  font-weight: 200;
+  color: #126035;
+}
+.loading {
+  width: 100vw;
+  margin-top: 100px;
+}
 @media screen and (max-width: 767px) {
   .header h3 {
     top: 190px;

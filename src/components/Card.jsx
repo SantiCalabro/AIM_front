@@ -8,7 +8,7 @@ export default function Card({ name, pic }) {
         <img src={pic} alt="" />
       </div>
       <div className={C.name}>
-        <h5>{name.toLowerCase()}</h5>
+        <h5>{name}</h5>
       </div>
     </div>
   );
